@@ -28,21 +28,61 @@
 
         <section id="dashboard" aria-label="Aperçu du tableau de bord">
             <h2>Aperçu du Portefeuille</h2>
-            <div class="dashboard-preview">
-                <article class="asset-card">
-                    <h3>Compte courant</h3>
-                    <p><strong>Solde:</strong> 50 000€</p>
-                </article>
-                <article class="asset-card">
-                    <h3>Position Bitcoin</h3>
-                    <p><strong>Quantité:</strong> 0.5 BTC</p>
-                    <p><strong>Valeur:</strong> 21 500€</p>
-                </article>
-                <article class="asset-card">
-                    <h3>Position Apple</h3>
-                    <p><strong>Quantité:</strong> 10 actions</p>
-                    <p><strong>Valeur:</strong> 1 800€</p>
-                </article>
+            <div class="dashboard-grid">
+                <div class="dashboard-item total-balance">
+                    <h3>Solde Total</h3>
+                    <p class="balance-amount">73 300€</p>
+                    <p class="balance-change">+2,5% ce mois</p>
+                </div>
+
+                <div class="dashboard-item asset-distribution">
+                    <h3>Répartition d'Actifs</h3>
+                    <div class="distribution-chart">
+                        <div class="chart-bar-container">
+                            <span class="bar-label">Crypto</span>
+                            <div class="bar-background">
+                                <div class="bar-fill bar-crypto"></div>
+                            </div>
+                            <span class="bar-value">45%</span>
+                        </div>
+                        <div class="chart-bar-container">
+                            <span class="bar-label">Actions</span>
+                            <div class="bar-background">
+                                <div class="bar-fill bar-stocks"></div>
+                            </div>
+                            <span class="bar-value">30%</span>
+                        </div>
+                        <div class="chart-bar-container">
+                            <span class="bar-label">Liquide</span>
+                            <div class="bar-background">
+                                <div class="bar-fill bar-cash"></div>
+                            </div>
+                            <span class="bar-value">25%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dashboard-item recent-transactions">
+                    <h3>Dernières Transactions</h3>
+                    <ul class="transaction-list">
+                        <li class="transaction">
+                            <span class="trans-type">Achat Bitcoin</span>
+                            <span class="trans-amount">-5 000€</span>
+                        </li>
+                        <li class="transaction">
+                            <span class="trans-type">Vente Actions Apple</span>
+                            <span class="trans-amount">+1 800€</span>
+                        </li>
+                        <li class="transaction">
+                            <span class="trans-type">Dépôt Virement</span>
+                            <span class="trans-amount">+10 000€</span>
+                        </li>
+                        <li class="transaction">
+                            <span class="trans-type">Achat Solana</span>
+                            <span class="trans-amount">-2 200€</span>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </section>
 
