@@ -98,25 +98,18 @@ p {
     font-size: var(--font-size-body);
 }
 
-.dashboard-preview {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: var(--spacing-xl);
-    margin-top: var(--spacing-xl);
-}
-
-.asset-card {
-    border: 1px solid var(--border-color);
-    padding: var(--spacing-lg);
-    border-radius: var(--border-radius);
-    background-color: var(--bg-light);
-}
-
 .dashboard-grid {
+    container-type: inline-size;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: 1fr;
     gap: var(--spacing-xl);
     margin-top: var(--spacing-xl);
+}
+
+@media (min-width: 640px) {
+    .dashboard-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
 }
 
 .dashboard-item {
@@ -134,7 +127,6 @@ p {
 }
 
 .total-balance {
-    grid-column: 1 / 2;
     background: linear-gradient(135deg, var(--primary-light) 0%, var(--accent-color) 100%);
     color: var(--text-white);
     text-align: center;
@@ -250,6 +242,7 @@ table {
     width: 100%;
     border-collapse: collapse;
     margin-top: var(--spacing-md);
+    font-size: 0.9rem;
 }
 
 th, td {
@@ -261,4 +254,73 @@ th, td {
 th {
     background-color: var(--primary-light);
     color: var(--text-white);
+    font-weight: 600;
+}
+
+@media (max-width: 640px) {
+    th:nth-child(3),
+    td:nth-child(3) {
+        display: none;
+    }
+    
+    table {
+        font-size: 0.85rem;
+    }
+    
+    th, td {
+        padding: var(--spacing-sm);
+    }
+}
+
+.chart-bar-container {
+    container-type: inline-size;
+}
+
+@container (min-width: 300px) {
+    .bar-item {
+        display: grid;
+        grid-template-columns: 100px 1fr 50px;
+        align-items: center;
+        gap: var(--spacing-md);
+    }
+}
+
+@container (max-width: 300px) {
+    .bar-item {
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+    
+    .bar-label {
+        text-align: center;
+    }
+    
+    .bar-value {
+        text-align: center;
+    }
+}
+
+.dashboard-item {
+    container-type: inline-size;
+}
+
+@container (max-width: 320px) {
+    .dashboard-item h3 {
+        font-size: 1rem;
+    }
+    
+    .balance-amount {
+        font-size: 1.75rem;
+    }
+}
+
+@container (min-width: 320px) {
+    .dashboard-item h3 {
+        font-size: 1.1rem;
+    }
+    
+    .balance-amount {
+        font-size: clamp(1.75rem, 8vw, 2.5rem);
+    }
 }
