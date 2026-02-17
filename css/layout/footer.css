@@ -1,8 +1,8 @@
 footer {
-    background-color: #1a1a2e;
-    color: white;
+    background-color: var(--primary-color);
+    color: var(--text-white);
     text-align: center;
-    padding: 1rem;
+    padding: var(--spacing-md);
 }
 
 .footer-content {
@@ -10,8 +10,8 @@ footer {
     margin: 0 auto;
     display: flex;
     align-items: flex-start;
-    gap: 2rem;
-    padding: 0 1rem;
+    gap: var(--spacing-xl);
+    padding: 0 var(--spacing-md);
 }
 
 .footer-center {
@@ -19,19 +19,19 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0.6rem;
+    gap: var(--spacing-lg);
 }
 
 .footer-nav {
     display: flex;
     flex-direction: row;
-    gap: 1rem;
+    gap: var(--spacing-lg);
     align-items: center;
     flex-wrap: wrap;
 }
 
 .footer-nav a {
-    color: white;
+    color: var(--text-white);
     text-decoration: none;
     font-size: 0.95rem;
 }
