@@ -1,6 +1,20 @@
 @import url('layout/header.css');
 @import url('layout/footer.css');
 
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../../assets/fonts/Montserrat-VariableFont_wght.ttf') format('truetype');
+    font-weight: 100 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../../assets/fonts/Montserrat-Italic-VariableFont_wght.ttf') format('truetype');
+    font-weight: 100 900;
+    font-style: italic;
+}
+
 :root {
     --primary-color: #1a1a2e;
     --primary-light: #667eea;
@@ -37,7 +51,7 @@ html {
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Montserrat', Arial, sans-serif;
     line-height: 1.6;
     color: var(--text-main);
     display: flex;
