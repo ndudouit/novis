@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Novis - Gestion de Portefeuille</title>
+    <link href="css/main.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img class="logo-novis" src="assets/img/novis-logo.png" alt="Logo Novis">
+            </a>
+        </div>
+        <nav aria-label="Navigation principale">
+            <a href="#dashboard">Tableau de bord</a>
+            <a href="#performances">Performances</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <article>
+                <h2>Visualisez et pilotez l’ensemble de votre patrimoine depuis une interface claire, rapide et sécurisée</h2>
+            </article>
+        </section>
+
+        <section id="dashboard" aria-label="Aperçu du tableau de bord">
+            <h2>Aperçu du Portefeuille</h2>
+            <div class="dashboard-preview">
+                <article class="asset-card">
+                    <h3>Compte courant</h3>
+                    <p><strong>Solde:</strong> 50 000€</p>
+                </article>
+                <article class="asset-card">
+                    <h3>Position Bitcoin</h3>
+                    <p><strong>Quantité:</strong> 0.5 BTC</p>
+                    <p><strong>Valeur:</strong> 21 500€</p>
+                </article>
+                <article class="asset-card">
+                    <h3>Position Apple</h3>
+                    <p><strong>Quantité:</strong> 10 actions</p>
+                    <p><strong>Valeur:</strong> 1 800€</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="performances" aria-label="Performances des actifs">
+            <h2>Récapitulatif des Performances</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Monnaie</th>
+                        <th>Prix</th>
+                        <th>1h</th>
+                        <th>24h</th>
+                        <th>7j</th>
+                        <th>Capitalisation boursière</th>
+                        <th>Volume sur 24h</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Bitcoin (BTC)</td>
+                        <td>57 306€</td>
+                        <td>-0.5%</td>
+                        <td>+2.3%</td>
+                        <td>+5.1%</td>
+                        <td>800 milliards €</td>
+                        <td>30 milliards €</td>
+                    </tr>
+                    <tr>
+                        <td>Ethereum (ETH)</td>
+                        <td>3 000€</td>
+                        <td>-0.2%</td>
+                        <td>+1.8%</td>
+                        <td>+4.0%</td>
+                        <td>350 milliards €</td>
+                        <td>20 milliards €</td>
+                    </tr>
+                    <tr>
+                        <td>Tether (USDT)</td>
+                        <td>0,93€</td>
+                        <td>0.0%</td>
+                        <td>0.0%</td>
+                        <td>0.0%</td>
+                        <td>85 milliards €</td>
+                        <td>50 milliards €</td>
+                    </tr>
+                    <tr>
+                        <td>XRP (XRP)</td>
+                        <td>0,55€</td>
+                        <td>+0.1%</td>
+                        <td>+0.5%</td>
+                        <td>+2.0%</td>
+                        <td>30 milliards €</td>
+                        <td>2 milliards €</td>
+                    </tr>
+                    <tr>
+                        <td>BNB (BNB)</td>
+                        <td>320€</td>
+                        <td>-0.3%</td>
+                        <td>+1.2%</td>
+                        <td>+3.5%</td>
+                        <td>50 milliards €</td>
+                        <td>1 milliard €</td>
+                    </tr>
+                    <tr>
+                        <td>USD Coin (USDC)</td>
+                        <td>0,93€</td>
+                        <td>0.0%</td>
+                        <td>0.0%</td>
+                        <td>0.0%</td>
+                        <td>25 milliards €</td>
+                        <td>5 milliards €</td>
+                    </tr>
+                    <tr>
+                        <td>Solana (SOL)</td>
+                        <td>110€</td>
+                        <td>+0.8%</td>
+                        <td>+3.0%</td>
+                        <td>+10.0%</td>
+                        <td>45 milliards €</td>
+                        <td>3 milliards €</td>
+                    </tr>
+                    <tr>
+                        <td>Tron (TRX)</td>
+                        <td>0,12€</td>
+                        <td>+0.2%</td>
+                        <td>+0.7%</td>
+                        <td>+1.5%</td>
+                        <td>10 milliards €</td>
+                        <td>500 millions €</td>
+                    </tr>
+                    <tr>
+                        <td>Dogecoin (DOGE)</td>
+                        <td>0,08€</td>
+                        <td>-0.1%</td>
+                        <td>+0.9%</td>
+                        <td>+2.2%</td>
+                        <td>12 milliards €</td>
+                        <td>800 millions €</td>
+                    </tr>
+                    <tr>
+                        <td>Figure HELOC</td>
+                        <td>100€</td>
+                        <td>0.0%</td>
+                        <td>0.0%</td>
+                        <td>0.0%</td>
+                        <td>1 milliard €</td>
+                        <td>10 millions €</td>
+                    </tr>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <img class="logo-novis" src="assets/img/novis-logo.png" alt="Logo Novis">
+            <div class="footer-center">
+                <nav class="footer-nav" aria-label="Liens légaux">
+                    <a href="terms.html">Mentions légales</a>
+                    <a href="cgu.html">CGU</a>
+                    <a href="privacy.html">Politique de confidentialité</a>
+                    <a href="cookies.html">Cookies</a>
+                </nav>
+                <p class="copyright">&copy; 2026 Novis. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
