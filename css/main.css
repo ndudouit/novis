@@ -236,6 +236,16 @@ p {
     content: '';
 }
 
+.positive {
+    color: #10b981;
+    font-weight: 600;
+}
+
+.negative {
+    color: #ef4444;
+    font-weight: 600;
+}
+
 table {
     width: 100%;
     border-collapse: collapse;
