@@ -193,6 +193,30 @@
                     </tr>
             </table>
         </section>
+
+        <section id="simulator" aria-label="Simulateur d'épargne">
+            <h2>Simulateur d'épargne</h2>
+            <form id="simulator-form" aria-label="Formulaire du simulateur d'épargne">
+                <div>
+                    <label for="initial-capital">Capital initial (€)</label>
+                    <input id="initial-capital" type="number" min="0" step="100" value="10000" required>
+                </div>
+                <div>
+                    <label for="annual-rate">Rendement annuel (%)</label>
+                    <input id="annual-rate" type="number" min="0" step="0.01" value="5" required>
+                </div>
+                <div>
+                    <label for="monthly-contribution">Versement mensuel (€)</label>
+                    <input id="monthly-contribution" type="number" min="0" step="10" value="200" required>
+                </div>
+                <div>
+                    <label for="years">Nombre d'années</label>
+                    <input id="years" type="number" min="5" max="50" value="10" required>
+                </div>
+                <button type="submit" aria-label="Calculer la projection de patrimoine">Lancer le calcul</button>
+            </form>
+            <p id="simulator-message" aria-live="polite" style="margin-top:1rem; color:#ef4444;"></p>
+        </section>
     </main>
 
     <footer>
@@ -208,5 +232,48 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        const form = document.getElementById('simulator-form');
+        const message = document.getElementById('simulator-message');
+
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const initialCapital = Number.parseFloat(document.getElementById('initial-capital').value);
+            const annualRate = Number.parseFloat(document.getElementById('annual-rate').value);
+            const monthlyContribution = Number.parseFloat(document.getElementById('monthly-contribution').value);
+            const years = Number.parseInt(document.getElementById('years').value, 10);
+
+            // Validation de base
+            if (Number.isNaN(initialCapital) || initialCapital < 0) {
+                message.textContent = 'Veuillez saisir un capital initial positif.';
+                return;
+            }
+            if (Number.isNaN(annualRate) || annualRate < 0 || annualRate > 40) {
+                message.textContent = 'Le rendement annuel doit être un nombre entre 0 et 40 %.';
+                return;
+            }
+            if (Number.isNaN(monthlyContribution) || monthlyContribution < 0) {
+                message.textContent = 'Veuillez saisir un versement mensuel positif.';
+                return;
+            }
+            if (Number.isNaN(years) || years < 5 || years > 50) {
+                message.textContent = 'Le nombre d\'années doit être compris entre 5 et 50.';
+                return;
+            }
+
+            // Si tout est valide, affichage de confirmation
+            message.style.color = '#0f766e';
+            message.textContent = 'Données valides';
+
+            const data = {
+                initialCapital,
+                annualRate,
+                monthlyContribution,
+                years,
+            };
+        });
+    </script>
 </body>
 </html>

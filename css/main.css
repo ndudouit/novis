@@ -324,3 +324,54 @@ th {
         font-size: clamp(1.75rem, 8vw, 2.5rem);
     }
 }
+
+#simulator {
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    background-color: var(--bg-white);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    padding: var(--spacing-xl);
+    margin-top: var(--spacing-xl);
+}
+
+#simulator form {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: var(--spacing-md);
+    align-items: end;
+}
+
+#simulator form div {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+}
+
+#simulator label {
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+#simulator input {
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    padding: 0.6rem;
+    font-size: var(--font-size-body);
+}
+
+#simulator button {
+    grid-column: span 1;
+    background-color: var(--primary-light);
+    color: var(--text-white);
+    border: none;
+    border-radius: var(--border-radius);
+    padding: 0.75rem 1rem;
+    cursor: pointer;
+    font-weight: 700;
+    transition: background-color 0.2s ease;
+}
+
+#simulator button:hover {
+    background-color: #4f6de8;
+}
+
