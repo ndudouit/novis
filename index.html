@@ -216,6 +216,7 @@
                 <button type="submit" aria-label="Calculer la projection de patrimoine">Lancer le calcul</button>
             </form>
             <p id="simulator-message" aria-live="polite" style="margin-top:1rem; color:#ef4444;"></p>
+            <div id="simulator-result" style="margin-top:1rem; color:#1f2937;"></div>
         </section>
     </main>
 
@@ -236,6 +237,9 @@
     <script>
         const form = document.getElementById('simulator-form');
         const message = document.getElementById('simulator-message');
+        const resultContainer = document.getElementById('simulator-result');
+
+        const formatter = new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR', minimumFractionDigits: 2 });
 
         form.addEventListener('submit', function (e) {
             e.preventDefault();
@@ -267,7 +271,16 @@
             const result = calculatePatrimoine(initialCapital, annualRate, monthlyContribution, years);
 
             message.style.color = '#0f766e';
-            message.textContent = 'Calcul effectué : consultez la console pour le détail des données.';
+            message.textContent = 'Calcul effectué : données affichées ci-dessous.';
+
+            resultContainer.innerHTML = `
+                <h3>Résultat</h3>
+                <ul>
+                    <li>Capital final : <strong>${formatter.format(result.finalCapital)}</strong></li>
+                    <li>Intérêts totaux : <strong>${formatter.format(result.cumulInterets)}</strong></li>
+                    <li>Versements totaux : <strong>${formatter.format(result.cumulVersements)}</strong></li>
+                </ul>
+            `;
 
             console.log('Résultat du calcul du patrimoine :', result);
         });
