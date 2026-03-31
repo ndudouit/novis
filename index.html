@@ -263,17 +263,66 @@
                 return;
             }
 
-            // Si tout est valide, affichage de confirmation
-            message.style.color = '#0f766e';
-            message.textContent = 'Données valides';
+            // Si tout est valide, on calcule le patrimoine mois par mois
+            const result = calculatePatrimoine(initialCapital, annualRate, monthlyContribution, years);
 
-            const data = {
-                initialCapital,
-                annualRate,
-                monthlyContribution,
-                years,
-            };
+            message.style.color = '#0f766e';
+            message.textContent = 'Calcul effectué : consultez la console pour le détail des données.';
+
+            console.log('Résultat du calcul du patrimoine :', result);
         });
+
+        /**
+         * Calcule l'évolution du patrimoine mois par mois et produit l'historique.
+         */
+        function calculatePatrimoine(initialCapital, annualRate, monthlyContribution, years) {
+            const monthlyRate = annualRate / 100 / 12;
+            const totalMonths = years * 12;
+
+            let capital = initialCapital;
+            let cumulVersements = 0;
+            let cumulInterets = 0;
+
+            const history = [];
+
+            // État initial
+            history.push({
+                month: 0,
+                capital: Number(capital.toFixed(2)),
+                cumulVersements: Number(cumulVersements.toFixed(2)),
+                cumulInterets: Number(cumulInterets.toFixed(2)),
+            });
+
+            for (let month = 1; month <= totalMonths; month++) {
+                // Ajout du versement mensuel
+                capital += monthlyContribution;
+                cumulVersements += monthlyContribution;
+
+                // Application du rendement mensuel
+                const interets = capital * monthlyRate;
+                capital += interets;
+                cumulInterets += interets;
+
+                history.push({
+                    month,
+                    capital: Number(capital.toFixed(2)),
+                    cumulVersements: Number(cumulVersements.toFixed(2)),
+                    cumulInterets: Number(cumulInterets.toFixed(2)),
+                });
+            }
+
+            return {
+                initialCapital: Number(initialCapital.toFixed(2)),
+                annualRate: Number(annualRate.toFixed(2)),
+                monthlyContribution: Number(monthlyContribution.toFixed(2)),
+                years,
+                totalMonths,
+                finalCapital: Number(capital.toFixed(2)),
+                cumulVersements: Number(cumulVersements.toFixed(2)),
+                cumulInterets: Number(cumulInterets.toFixed(2)),
+                history,
+            };
+        }
     </script>
 </body>
 </html>
